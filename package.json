@@ -17,5 +17,29 @@
   "publishConfig": {
     "access": "public",
     "provenance": true
+  },
+  "bin": {
+    "observe-unit-inventory": "bin/observe-unit-inventory.mjs"
+  },
+  "scripts": {
+    "observe-unit-inventory": "node bin/observe-unit-inventory.mjs",
+    "check": "node --check src/observe-unit-inventory.mjs && node --check bin/observe-unit-inventory.mjs",
+    "test": "node --test test/*.test.mjs",
+    "verify": "npm run check && npm test"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "x-agentic-metro-enterprise": {
+    "node-id": "systemd-unit-inventory-observation-service",
+    "organizational-kind": "service",
+    "actor": "urn:ame:systemd-unit-inventory-observation-service",
+    "owners": ["561-group", "red-cup-engineering"],
+    "membrane": { "law": "src/" },
+    "admission": "one exact --host (the literal string 'local' or a bare SSH destination); returns that host's systemd unit and timer inventory as JSON",
+    "refusal": "any systemctl verb other than list-units/list-timers, any unit-file content beyond what systemctl itself reports, any SSH credential or key material, and any host value containing shell metacharacters",
+    "operation-catalog": {
+      "observe-unit-inventory": { "effects": [], "network": true }
+    }
   }
 }
