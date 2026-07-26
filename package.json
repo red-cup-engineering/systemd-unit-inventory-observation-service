@@ -12,7 +12,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/emsenn/systemd-unit-inventory-observation-service.git"
+    "url": "git+https://github.com/red-cup-engineering/systemd-unit-inventory-observation-service.git"
   },
   "publishConfig": {
     "access": "public",
