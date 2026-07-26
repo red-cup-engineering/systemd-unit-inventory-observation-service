@@ -1,0 +1,21 @@
+{
+  "name": "@red-cup-engineering/systemd-unit-inventory-observation-service",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "description": "Read-only systemd unit inventory observation across every host in the Union swarm, for asset bookkeeping.",
+  "keywords": [
+    "systemd",
+    "asset-inventory",
+    "observation"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emsenn/systemd-unit-inventory-observation-service.git"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}
