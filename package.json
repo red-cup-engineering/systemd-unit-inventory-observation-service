@@ -34,12 +34,38 @@
     "node-id": "systemd-unit-inventory-observation-service",
     "organizational-kind": "service",
     "actor": "urn:ame:systemd-unit-inventory-observation-service",
-    "owners": ["561-group", "red-cup-engineering"],
-    "membrane": { "law": "src/" },
+    "owners": [
+      "561-group",
+      "red-cup-engineering"
+    ],
+    "membrane": {
+      "law": "src/"
+    },
     "admission": "one exact --host (the literal string 'local' or a bare SSH destination); returns that host's systemd unit and timer inventory as JSON",
     "refusal": "any systemctl verb other than list-units/list-timers, any unit-file content beyond what systemctl itself reports, any SSH credential or key material, and any host value containing shell metacharacters",
     "operation-catalog": {
-      "observe-unit-inventory": { "effects": [], "network": true }
+      "observe-unit-inventory": {
+        "effects": [],
+        "network": true
+      }
     }
+  },
+  "x-semiotic-voxel": {
+    "profile": "org.harmonious-union.semiotic-voxel.v1",
+    "owner": "red-cup-engineering",
+    "kind": "capability-cell",
+    "actor": "urn:ame:systemd-unit-inventory-observation-service",
+    "operations": [
+      "observe-unit-inventory"
+    ],
+    "capabilities": [
+      {
+        "capability": "systemd-unit-inventory-observation-service",
+        "faces": [
+          "observe-unit-inventory"
+        ]
+      }
+    ],
+    "package": "@red-cup-engineering/systemd-unit-inventory-observation-service"
   }
 }
