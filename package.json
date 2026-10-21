@@ -65,5 +65,9 @@
   "dependencies": {
     "@red-cup-engineering/computer-system-engine": "workspace:*",
     "@red-cup-engineering/javascript-node-services-section": "workspace:*"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://github.com/561-group/.github/blob/main/TIPS.md"
   }
 }
