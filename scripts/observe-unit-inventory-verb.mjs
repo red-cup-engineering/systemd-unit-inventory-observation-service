@@ -1,6 +1,6 @@
 // observe-unit-inventory-verb — this package's read-only unit/timer observation as a plain verbs
 // module: its named export is the verb function, carrying a `.spec` ({args, returns, refusal})
-// and an `.effects` array — the shape computer-system-engine's generic stdio verb server
+// and an `.effects` array — the shape computer-engine's generic stdio verb server
 // (scripts/serve-verbs-over-stdio.mjs) loads with
 // `--verbs @red-cup-engineering/systemd-unit-inventory-observation-service/observe-unit-inventory-verb`.
 // Invents and ports nothing: the handler is a direct call to this package's own
@@ -14,7 +14,7 @@
 
 import { observeUnitInventory } from "../src/observe-unit-inventory.mjs";
 import { runSystemctl } from "../src/run-systemctl.mjs";
-import { REFUSAL_SCHEMA } from "@red-cup-engineering/computer-system-engine/verb-refusal-schema";
+import { REFUSAL_SCHEMA } from "@red-cup-engineering/computer-engine/verb-refusal-schema";
 
 function observeUnitInventoryVerb({ host }) {
   return observeUnitInventory(host ?? "local", { run: runSystemctl });

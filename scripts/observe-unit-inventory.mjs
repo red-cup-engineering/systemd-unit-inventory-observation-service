@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { argument as option } from "@red-cup-engineering/javascript-node-services-section/argv";
+import { argument as option } from "@red-cup-engineering/parse-javascript-argv-service";
 import { observeUnitInventory } from "../src/observe-unit-inventory.mjs";
 import { runSystemctl } from "../src/run-systemctl.mjs";
 

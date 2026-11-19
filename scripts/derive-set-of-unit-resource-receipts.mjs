@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { readFileSync } from "node:fs";
-import { argument as option } from "@red-cup-engineering/javascript-node-services-section/argv";
+import { argument as option } from "@red-cup-engineering/parse-javascript-argv-service";
 import { deriveSetOfUnitResourceReceipts } from "../src/derive-unit-resource-receipts.mjs";
 
 function readObservations(path) {

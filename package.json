@@ -62,8 +62,8 @@
     "node": ">=22"
   },
   "dependencies": {
-    "@red-cup-engineering/computer-system-engine": "workspace:*",
-    "@red-cup-engineering/javascript-node-services-section": "workspace:*"
+    "@red-cup-engineering/computer-engine": "^0.1.37",
+    "@red-cup-engineering/parse-javascript-argv-service": "^0.3.1"
   },
   "funding": {
     "type": "individual",
