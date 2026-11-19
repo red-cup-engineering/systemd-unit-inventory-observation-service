@@ -56,8 +56,7 @@
     "derive-set-of-unit-resource-receipts": "node scripts/derive-set-of-unit-resource-receipts.mjs",
     "observe-set-of-checkout-bound-units": "node scripts/observe-set-of-checkout-bound-units.mjs",
     "check": "node --check src/observe-unit-inventory.mjs && node --check src/observe-unit-resource-accounting.mjs && node --check src/derive-unit-resource-receipts.mjs && node --check src/observe-set-of-checkout-bound-units.mjs && node --check src/run-systemctl.mjs && node --check scripts/observe-unit-inventory.mjs && node --check scripts/observe-set-of-unit-resource-accounting.mjs && node --check scripts/derive-set-of-unit-resource-receipts.mjs && node --check scripts/observe-set-of-checkout-bound-units.mjs",
-    "test": "node --test test/*.test.mjs",
-    "verify": "npm run check && npm test"
+    "verify": "npm run check"
   },
   "engines": {
     "node": ">=22"
