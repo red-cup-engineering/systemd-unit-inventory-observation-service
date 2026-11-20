@@ -14,7 +14,7 @@
 
 import { observeUnitInventory } from "../src/observe-unit-inventory.mjs";
 import { runSystemctl } from "../src/run-systemctl.mjs";
-import { REJECTION_SCHEMA } from "@red-cup-engineering/computer-engine/verb-refusal-schema";
+import { REFUSAL_SCHEMA } from "@red-cup-engineering/computer-engine/verb-refusal-schema";
 
 function observeUnitInventoryVerb({ host }) {
   return observeUnitInventory(host ?? "local", { run: runSystemctl });
@@ -26,7 +26,7 @@ observeUnitInventoryVerb.spec = {
     properties: { host: { type: "string" }, units: { type: "array" }, timers: { type: "array" } },
     required: ["host", "units", "timers"],
   },
-  refusal: REJECTION_SCHEMA,
+  refusal: REFUSAL_SCHEMA,
 };
 observeUnitInventoryVerb.effects = ["process:execute"];
 
