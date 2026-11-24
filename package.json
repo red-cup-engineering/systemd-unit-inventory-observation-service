@@ -1,0 +1,72 @@
+{
+  "name": "@red-cup-engineering/systemd-unit-inventory-observation-service",
+  "version": "0.3.2",
+  "private": false,
+  "type": "module",
+  "description": "Read-only systemd unit inventory and resource-accounting observation across every host in the Union swarm, for asset bookkeeping and resource metering.",
+  "keywords": [
+    "systemd",
+    "asset-inventory",
+    "observation",
+    "resource-accounting",
+    "resource-metering"
+  ],
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "import": "./src/observe-unit-inventory.mjs"
+    },
+    "./resource-accounting": {
+      "import": "./src/observe-unit-resource-accounting.mjs"
+    },
+    "./resource-receipts": {
+      "import": "./src/derive-unit-resource-receipts.mjs"
+    },
+    "./checkout-bound-units": {
+      "import": "./src/observe-set-of-checkout-bound-units.mjs"
+    },
+    "./run-systemctl": {
+      "import": "./src/run-systemctl.mjs"
+    },
+    "./observe-unit-inventory-verb": {
+      "import": "./scripts/observe-unit-inventory-verb.mjs"
+    }
+  },
+  "files": [
+    "scripts/",
+    "src/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/red-cup-engineering/systemd-unit-inventory-observation-service.git"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "bin": {
+    "observe-unit-inventory": "scripts/observe-unit-inventory.mjs",
+    "observe-set-of-unit-resource-accounting": "scripts/observe-set-of-unit-resource-accounting.mjs",
+    "derive-set-of-unit-resource-receipts": "scripts/derive-set-of-unit-resource-receipts.mjs",
+    "observe-set-of-checkout-bound-units": "scripts/observe-set-of-checkout-bound-units.mjs"
+  },
+  "scripts": {
+    "observe-unit-inventory": "node scripts/observe-unit-inventory.mjs",
+    "observe-set-of-unit-resource-accounting": "node scripts/observe-set-of-unit-resource-accounting.mjs",
+    "derive-set-of-unit-resource-receipts": "node scripts/derive-set-of-unit-resource-receipts.mjs",
+    "observe-set-of-checkout-bound-units": "node scripts/observe-set-of-checkout-bound-units.mjs",
+    "check": "node --check src/observe-unit-inventory.mjs && node --check src/observe-unit-resource-accounting.mjs && node --check src/derive-unit-resource-receipts.mjs && node --check src/observe-set-of-checkout-bound-units.mjs && node --check src/run-systemctl.mjs && node --check scripts/observe-unit-inventory.mjs && node --check scripts/observe-set-of-unit-resource-accounting.mjs && node --check scripts/derive-set-of-unit-resource-receipts.mjs && node --check scripts/observe-set-of-checkout-bound-units.mjs",
+    "verify": "npm run check"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@red-cup-engineering/computer-engine": "^0.1.37",
+    "@red-cup-engineering/parse-javascript-argv-service": "^0.3.1"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://github.com/561-group/.github/blob/main/TIPS.md"
+  }
+}
